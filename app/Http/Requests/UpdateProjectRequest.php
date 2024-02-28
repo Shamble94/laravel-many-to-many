@@ -24,7 +24,7 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => "required|max:30|unique:projects",
+            "name" => "required|max:30",
             "description" => "required",
             "assigned_by" => "required",
         ];
@@ -33,7 +33,7 @@ class UpdateProjectRequest extends FormRequest
         return [
             "name.required" => "Il campo name è obbligatorio",
             "name.max" => "Il campo name deve essere di massimo 100 caratteri",
-            "name.unique" => "Il campo name deve essere univoco",
+          
             "description.required" => "Il campo descrizione è obbligatorio",
             "assigned_by.required" => "Il campo assigned by è obbligatorio",
         ];

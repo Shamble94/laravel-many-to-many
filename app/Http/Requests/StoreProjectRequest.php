@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => "required|max:30|unique:projects",
+            "name" => "required|max:30",
             "type_id" => "nullable|exists:types,id",
             "description" => "required",
             "assigned_by" => "required",
@@ -34,7 +34,7 @@ class StoreProjectRequest extends FormRequest
         return [
             "name.required" => "Il campo name è obbligatorio",
             "name.max" => "Il campo name deve essere di massimo 100 caratteri",
-            "name.unique" => "Il campo name deve essere univoco",
+            
             "type_id.exists" => "Il tipo selezionato non esiste",
             "description.required" => "Il campo descrizione è obbligatorio",
             "assigned_by.required" => "Il campo assigned by è obbligatorio",
