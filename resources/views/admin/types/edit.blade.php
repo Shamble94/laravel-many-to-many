@@ -26,7 +26,7 @@
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-
+            <a href="{{ route("admin.types.index")}}"><button type="submit" class="btn btn-primary mt-3 ">Salva</button></a>
             
             </form>
         </div>
