@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\Type;
+use App\Models\Technology;
 class ProjectController extends Controller
 {
     /**
@@ -32,7 +33,9 @@ class ProjectController extends Controller
     public function create()
     {
         $type = Type::all();
-        return view("admin.projects.create", compact("type"));
+
+        $technologies =  Technology::all();
+        return view("admin.projects.create", compact("type", "technologies"));
     }
 
     /**
