@@ -54,10 +54,9 @@
             <div class="form-group">
                 <label class="mt-3" for="technology_id">Seleziona tecnologia</label>
                 <div>
-
                     @foreach($technologies as $technology)
-                        <input type="checkbox" name="technologies[]" id="technology- {{ $technology->id}}" class="form-check-input">
-                        <label for="" class="form-check-label" value= {{ $technology->id }}>  {{ $technology->name }}</label>
+                        <input type="checkbox" name="technologies[]" id="technology-{{ $technology->id}}" class="form-check-input" value="{{ $technology->id }}">
+                        <label for="" class="form-check-label" >  {{ $technology->name }}</label>
                     @endforeach
                 </div>
                 @error('technology_id')
@@ -66,7 +65,7 @@
             </div>
             <div class="form-group">
                 <label class="mt-3" for="assigned_by">Assigned by</label>
-                <textarea type="text" name="assigned_by" id="assigned_by" class="form-control" placeholder="Descrizione fumetto">{{ old("assigned_by") }}</textarea>
+                <textarea type="text" name="assigned_by" id="assigned_by" class="form-control" placeholder="Descrizione progetto">{{ old("assigned_by") }}</textarea>
                 @error('assigned_by')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror

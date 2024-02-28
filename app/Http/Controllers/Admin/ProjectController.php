@@ -32,6 +32,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
+
         $type = Type::all();
 
         $technologies =  Technology::all();
@@ -63,6 +64,13 @@ class ProjectController extends Controller
        
         $project->save();
 
+        /* dd($form_data); */
+
+        if($request->has("technologies")){
+
+            $project->technologies()->attach($form_data["technologies"]);
+        }
+        
         return redirect()->route("admin.projects.index");
     }
 

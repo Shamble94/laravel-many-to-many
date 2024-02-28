@@ -12,6 +12,13 @@
             @else
             <img src="{{ asset("/img/placeholder1.jpg") }}" alt="{{ $project->name}}" width="150">
             @endif
+            <p>
+                @forelse($project->technologies as $technology)
+                #{{ $technology->name }}
+                @empty
+                    Nessuna tech selezionata per questo progetto
+                @endforelse
+            </p>
             <p>{{ $project->description }}</p>
             <p>{{ $project->type->name }}</p>
             <p>{{ $project->assigned_by }}</p>
