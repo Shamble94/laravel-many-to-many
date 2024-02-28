@@ -101,7 +101,8 @@ class ProjectController extends Controller
         }
 
         $type = Type::all();
-        return view ("admin.projects.edit", compact ("project","type","error_message"));
+        $technologies = Technology::all();
+        return view ("admin.projects.edit", compact ("project","type","error_message","technologies"));
     }
 
     /**
@@ -121,7 +122,7 @@ class ProjectController extends Controller
         
         if(count($exists) > 0){
             $error_message = " Questo titolo è gia in uso";
-            return redirect()->route("admin.project.edit", compact("project", "error_message"));
+            return redirect()->route("admin.projects.edit", compact("project", "error_message"));
         }
         
         if($request->hasFile("cover_image")){
@@ -139,6 +140,10 @@ class ProjectController extends Controller
        
         $project->update($form_data);
 
+        if($request->has("technologies")){
+
+            $project->technologies()->sync($form_data["technologies"]);
+        }
         return redirect()->route("admin.projects.index");
     }
 

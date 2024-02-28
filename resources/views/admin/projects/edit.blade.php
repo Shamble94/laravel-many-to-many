@@ -60,6 +60,18 @@
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
             </div>
+            <div class="form-group">
+                <label class="mt-3" for="technology_id">Seleziona tecnologia</label>
+                <div>
+                    @foreach($technologies as $technology)
+                        <input type="checkbox" name="technologies[]" id="technology-{{ $technology->id}}" class="form-check-input" value="{{ $technology->id }}">
+                        <label for="" class="form-check-label" >  {{ $technology->name }}</label>
+                    @endforeach
+                </div>
+                @error('technology_id')
+                    <div class ="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
             </div>
             <div class="form-group">
                 <label class="mt-3" for="assigned_by">Assigned by</label>
