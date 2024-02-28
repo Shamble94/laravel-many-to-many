@@ -8,7 +8,10 @@
                     <div>
                         <h2>All Technologies</h2>
                     </div>
+                    <a href=" {{ route("admin.technologies.create") }}"><button class="btn btn-primary">Add New tech</button></a>
                </div>
+               <div>
+            </div>    
             </div>
             <div class="col-12">
                 <table class=" table mt-3 table-stipred">
