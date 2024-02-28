@@ -6,11 +6,8 @@
             <div class="col-12 mt-4">
                <div class="d-flex justify-content-between">
                     <div>
-                        <h2>All Types</h2>
+                        <h2>All Technologies</h2>
                     </div>
-                    <div>
-                        <a href=" {{ route("admin.types.create") }}"><button class="btn btn-primary">Add New Type</button></a>
-                    </div>    
                </div>
             </div>
             <div class="col-12">
@@ -25,20 +22,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                          @foreach($types as $type)
+                          @foreach($technologies as $technology)
                             <tr>
-                                <td>{{ $type->id}}</td>
-                                <td>{{ $type->name}}</td>
-                                <td>{{ $type->slug}}</td>
-                                <td>{{ count($type->projects) }}</td> 
+                                <td>{{ $technology->id}}</td>
+                                <td>{{ $technology->name}}</td>
+                                <td>{{ $technology->slug}}</td>
+                                <td>{{ count($technology->projects) }}</td> 
                                 <td>
-                                    <a href="{{ route("admin.types.show", ["type" => $type->id])}}" class="btn btn-sm btn-square btn-primary"><i class=" fa-solid fa-eye"></i></a>
-                                    <a href="{{ route("admin.types.edit", ["type" => $type->id])}}" class="btn btn-sm btn-square btn-warning"><i class=" fa-solid fa-edit"></i></a>
+                                    <a href="{{ route("admin.technologies.show", ["technology" => $technology->id])}}" class="btn btn-sm btn-square btn-primary"><i class=" fa-solid fa-eye"></i></a>
+                                    <a href="{{ route("admin.technologies.edit", ["technology" => $technology->id])}}" class="btn btn-sm btn-square btn-warning"><i class=" fa-solid fa-edit"></i></a>
                                     <button class="btn btn-sm btn-square btn-danger" data-bs-toggle="modal" 
-                                        data-bs-target="#modal_type_delete-{{ $type->id }}" 
-                                        data-id= "{{ $type->id }}" data-name="{{ $type->name }}"  data-type="types">Elimina
+                                        data-bs-target="#modal_technology_delete-{{ $technology->id }}" 
+                                        data-id= "{{ $technology->id }}" data-name="{{ $technology->name }}"  data-technology="technologies">Elimina
                                     </button>
-                                     @include("admin.types.modal_delete") 
+                                     @include("admin.technologies.modal_tech_delete") 
                                 </td>
                             </tr>
                             @endforeach  

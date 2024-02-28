@@ -112,6 +112,13 @@
                                     <i class="fa-solid fa-folder fa-lg fa-fw"></i>Types
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                {{ Route::currentRouteName() }}
+                                <a class="nav-link text-white {{ Route::currentRouteName() == "admin.technologies.index" ? "bg-primary" : "" }}"
+                                    href=" {{ Route("admin.technologies.index")}}">
+                                    <i class="fa-solid fa-tech fa-lg fa-fw"></i>Technologies
+                                </a>
+                            </li>
                         </ul>
                     </main>
                 </div>
