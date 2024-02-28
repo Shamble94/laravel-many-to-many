@@ -95,28 +95,28 @@
                                 {{ Route::currentRouteName() }}
                                 <a class="nav-link text-white {{ Route::currentRouteName() == "admin.dashboard" ? "bg-primary" : "" }}"
                                     href=" {{ Route("admin.dashboard") }}"> 
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i>Dashboard
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw mx-2"></i>Dashboard
                                 </a>
                             </li>
                             <li class="nav-item">
                                 {{ Route::currentRouteName() }}
                                 <a class="nav-link text-white {{ Route::currentRouteName() == "admin.projects.index" ? "bg-primary" : "" }}"
                                     href=" {{ Route("admin.projects.index")}}">
-                                    <i class="fa-solid fa-newspaper fa-lg fa-fw"></i>Projects
+                                    <i class="fa-solid fa-newspaper fa-lg fa-fw mx-2"></i>Projects
                                 </a>
                             </li>
                             <li class="nav-item">
                                 {{ Route::currentRouteName() }}
                                 <a class="nav-link text-white {{ Route::currentRouteName() == "admin.types.index" ? "bg-primary" : "" }}"
                                     href=" {{ Route("admin.types.index")}}">
-                                    <i class="fa-solid fa-folder fa-lg fa-fw"></i>Types
+                                    <i class="fa-solid fa-folder fa-lg fa-fw mx-2"></i>Types
                                 </a>
                             </li>
                             <li class="nav-item">
                                 {{ Route::currentRouteName() }}
                                 <a class="nav-link text-white {{ Route::currentRouteName() == "admin.technologies.index" ? "bg-primary" : "" }}"
                                     href=" {{ Route("admin.technologies.index")}}">
-                                    <i class="fa-solid fa-tech fa-lg fa-fw"></i>Technologies
+                                    <i class="fa-solid fa-code fa-lg fa-fw mx-2"></i>Technologies
                                 </a>
                             </li>
                         </ul>
