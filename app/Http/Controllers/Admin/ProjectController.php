@@ -144,6 +144,10 @@ class ProjectController extends Controller
 
             $project->technologies()->sync($form_data["technologies"]);
         }
+        else
+        {
+            $project->technologies()->sync([]);
+        }
         return redirect()->route("admin.projects.index");
     }
 

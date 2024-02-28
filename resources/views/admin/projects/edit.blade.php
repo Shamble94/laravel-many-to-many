@@ -62,12 +62,19 @@
             </div>
             <div class="form-group">
                 <label class="mt-3" for="technology_id">Seleziona tecnologia</label>
-                <div>
-                    @foreach($technologies as $technology)
-                        <input type="checkbox" name="technologies[]" id="technology-{{ $technology->id}}" class="form-check-input" value="{{ $technology->id }}">
-                        <label for="" class="form-check-label" >  {{ $technology->name }}</label>
-                    @endforeach
+                @foreach($technologies as $technology)
+                <div class="form-check-inline">
+                    @if ($errors->any())
+                        <input type="checkbox" name="technologies[]" id="technology-{{ $technology->id}}" class="form-check-input" value="{{ $technology->id }}" 
+                        {{in_array($technology->id, old("technologies", []))  ? "checked" : "" }}>
+
+                    @else
+                    <input type="checkbox" name="technologies[]" id="technology-{{ $technology->id}}" class="form-check-input" value="{{ $technology->id }}" 
+                    {{ $project->technologies->contains($technology->id) ? "checked" : "" }}>
+                    @endif
+                    <label for="" class="form-checklabel">  {{ $technology->name}}</label>
                 </div>
+                @endforeach
                 @error('technology_id')
                     <div class ="text-danger">{{ $message }}</div>
                 @enderror
